@@ -24,7 +24,6 @@ public class MainActivityFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
         MobileAds.initialize(getContext(), "ca-app-pub-3940256099942544~3347511713");
-//        MobileAds.initialize(getContext(), "ca-app-pub-4462480882635201~4769144637");
 
         AdView mAdView = root.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();

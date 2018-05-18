@@ -1,12 +1,12 @@
 package com.andrea.punchline;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.andrea.jokes.Jokes;
-
 public class PunchLineActivity extends AppCompatActivity {
+
+    private static final String EXTRAS_JOKE = "JOKE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +15,14 @@ public class PunchLineActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.textview);
 
-        Jokes jokes = new Jokes();
-        textView.setText(jokes.getJoke());
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            String joke = extras.getString(EXTRAS_JOKE);
+            textView.setText(joke);
+        } else {
+            finish();
+        }
     }
+
 }
