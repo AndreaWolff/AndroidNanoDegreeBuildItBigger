@@ -23,3 +23,30 @@ allprojects {
         }
     }
 }
+
+// ** IMPORTANT - Start your emulator before running this task!! **
+task run_android_test {
+    description "**IMPORTANT - Start emulator before running this task! This tasks runs start the Endpoint, the Android test, then closes the Endpoint"
+    group "Unit Test"
+
+    task startAppEngine(type: GradleBuild){
+        tasks = ['appengineStart']
+    }
+
+    task stopAppEngine(type: GradleBuild){
+        tasks = ['appengineStop']
+    }
+
+    task startAndroidTest(type: GradleBuild){
+        tasks = ['connectedAndroidTest']
+    }
+
+    doFirst {
+        startAppEngine.execute()
+        startAndroidTest.execute()
+    }
+
+    doLast {
+        stopAppEngine.execute()
+    }
+}

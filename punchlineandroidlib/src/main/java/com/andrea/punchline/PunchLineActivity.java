@@ -20,13 +20,13 @@ public class PunchLineActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        TextView textView = findViewById(R.id.punchline_textview);
+        TextView punchLineTextView = findViewById(R.id.punchline_textview);
 
         Bundle extras = getIntent().getExtras();
 
         if (extras != null) {
             String joke = extras.getString(EXTRAS_JOKE);
-            textView.setText(joke);
+            punchLineTextView.setText(joke);
         } else {
             finish();
         }

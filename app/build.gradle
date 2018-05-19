@@ -36,16 +36,16 @@ android {
         }
     }
 
-    flavorDimensions "tier"
+    flavorDimensions "dimension"
 
     productFlavors {
         free {
-            dimension "tier"
+            dimension "dimension"
             applicationId "com.udacity.gradle.builditbigger"
         }
 
         paid {
-            dimension "tier"
+            dimension "dimension"
             applicationId "com.udacity.gradle.builditbigger"
         }
     }
@@ -73,7 +73,11 @@ dependencies {
     implementation 'com.google.code.findbugs:jsr305:3.0.1'
 
     // Used to show ads in free service
-    freeCompile 'com.google.android.gms:play-services-ads:15.0.1'
+    freeImplementation 'com.google.android.gms:play-services-ads:15.0.1'
+
+    // Butterknife taken from http://jakewharton.github.io/butterknife/
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     // Testing
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
