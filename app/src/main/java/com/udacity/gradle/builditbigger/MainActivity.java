@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 
 import com.andrea.punchline.PunchLineActivity;
 
+import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
 @SuppressWarnings("unchecked")
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         new EndpointsAsyncTask() {
             @Override
             protected void onPostExecute(String result) {
-                progressBar.setVisibility(View.GONE);
+                progressBar.setVisibility(GONE);
 
                 Intent intent = new Intent(getApplicationContext(), PunchLineActivity.class);
                 intent.putExtra(EXTRAS_JOKE, result);

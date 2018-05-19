@@ -20,8 +20,7 @@ public class EndpointsAsyncTaskTest extends AndroidTestCase {
             String joke = task.execute().get();
 
             // Verify
-            assertThat(joke, is("This is totally a funny joke"));
-
+            assertThat(joke, is("This is totally a funny joke!"));
         } catch (Exception e) {
             fail("Async task failed");
         }

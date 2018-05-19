@@ -20,7 +20,7 @@ public class PunchLineActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        TextView textView = findViewById(R.id.textview);
+        TextView textView = findViewById(R.id.punchline_textview);
 
         Bundle extras = getIntent().getExtras();
 
